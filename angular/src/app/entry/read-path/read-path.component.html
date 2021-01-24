@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-between">
+    <h4>Read Path</h4>
+
+    <button mat-button (click)="onClose()"> 
+        <span aria-hidden="true">X</span>
+    </button>
+</div>
+
+<div style="overflow: auto; height:450px">
+    <form #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit($event)">
+        <!--(submit)="onSubmit(form)"-->
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter path</span>
+            </div>
+            <input required minlength="2" type="text"
+                    class="form-control" name="path">
+        </div>
+
+        <div class="m-3 input-group" >
+            <div class="input-group-prepend">
+                <span class="input-group-text">Type</span>
+            </div>
+            <mat-radio-group aria-label="Select an option" >
+                <li class="list-group-item"  *ngFor="let item of itemsList">
+                    <input type="radio" [(ngModel)]="type" name="list_name" 
+                            value="{{item.value}}" (change)="onItemChange(item)"/> 
+                    {{item.name}}
+                    
+                </li>
+            </mat-radio-group>
+        </div>
+        <!--<h5>{{radioSelectedString}}</h5>
+        https://www.freakyjolly.com/how-to-show-radio-input-listing-in-angular-6/#.YAv_jelR2Uk
+        -->
+
+
+        <!--<div class="text-left text-danger">Select Type</div>-->
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <button 
+                    class="mt-4" mat-raised-button color="primary" 
+                    type="submit" [disabled]="form.invalid">
+                    Read
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
