@@ -33,7 +33,7 @@ namespace EventManagement.Controllers
             dt.Columns.Add("alertname");
 
             //dt.Rows.Add(1, "IT");
-            dt.Rows.Add("lgeatdlogakwupvupzod", "Work In Progress", "Critical", "J2EE", "FortiSIEM", "Exchange", "2020-10-10 12:11:56.000", "ywuguaygmgsfrwddvgqn", "Exchange", "STATE CHANGED", "Error", "Monitor_28", 50, "information", 0, "2020-10-10 12:11:56.000", "AlertName-*");
+            //dt.Rows.Add("lgeatdlogakwupvupzod", "Work In Progress", "Critical", "J2EE", "FortiSIEM", "Exchange", "2020-10-10 12:11:56.000", "ywuguaygmgsfrwddvgqn", "Exchange", "STATE CHANGED", "Error", "Monitor_28", 50, "information", 0, "2020-10-10 12:11:56.000", "AlertName-*");
 
             return Request.CreateResponse(HttpStatusCode.OK, dt);
         }

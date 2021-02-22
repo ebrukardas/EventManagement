@@ -20,9 +20,11 @@ namespace EventManagement
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            // force Web API to output JSON response only
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(
                 new MediaTypeHeaderValue("text/html"));
 
+            // solves CORS problem
             config.EnableCors(new EnableCorsAttribute("http://localhost:4200", "*", "*"));
 
         }

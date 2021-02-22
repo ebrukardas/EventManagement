@@ -259,13 +259,27 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\App.cs" />
+    <Compile Include="Controllers\Application.cs" />
+    <Compile Include="Controllers\Apriori.cs" />
+    <Compile Include="Controllers\AprioriInt.cs" />
+    <Compile Include="Controllers\Commons.cs" />
+    <Compile Include="Controllers\Event.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InputController.cs" />
+    <Compile Include="Controllers\JsonObj.cs" />
+    <Compile Include="Controllers\Mixed.cs" />
     <Compile Include="Controllers\MixedController.cs" />
+    <Compile Include="Controllers\Program_Yedek.cs" />
+    <Compile Include="Controllers\ReadFiles.cs" />
+    <Compile Include="Controllers\ShowFilesController.cs" />
+    <Compile Include="Controllers\Synthetic.cs" />
     <Compile Include="Controllers\SyntheticController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Input.cs" />
     <Compile Include="Models\Mixed.cs" />
     <Compile Include="Models\Synthetic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

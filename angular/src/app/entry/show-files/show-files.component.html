@@ -1,1 +1,74 @@
-<p>show-files works!</p>
+<div class="d-flex justify-content-between">
+    <h4>RESULT</h4>
+
+    <button mat-button (click)="onClose()"> 
+        <span aria-hidden="true">X</span>
+    </button>
+</div>
+
+<div style="overflow: auto; height:800px">
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+        <p style="color: white">Please Wait. </p>  
+        </ngx-spinner> 
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+    <head>
+        <style>
+        p.a {
+            font-family: "Times New Roman", Times, serif;
+        }
+        table {
+            font-family: 'Trebuchet MS', sans-serif;
+            border-collapse: collapse;
+            width: 95%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 20px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        </style>
+    </head>
+    <body>
+
+        <h2>Kural Açıklamaları</h2>
+
+        <table>
+            <tr>
+                <th>Kurallar</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <th>Kural 1</th>
+                <td>Bir saat içerisinde bir uygulamaya en fazla beş kere yeni giriş yapılması üzerinedir. Bu sayıdan fazlası tehdit olarak algılanmaktır.</td>
+            </tr>
+            <tr>
+                <th>Kural 2</th>
+                <td>Ulaşılmaya çalışılan programın cevap vermiyor veya sürekli meşgul oluşu, olası bir tehdit olarak algılanmaktadır.</td>
+            </tr>
+            <tr>
+                <th>Kural 3</th>
+                <td>Ulaşılmaya çalışılan sunucunun cevap vermiyor veya sürekli meşgul oluşu, olası bir tehdit olarak algılanmaktadır.</td>
+            </tr>
+            <tr>
+                <th>Kural 4</th>
+                <td>Ulaşılmaya çalışılan sunucu sürekli olarak yeniden başlatılıyorsa, olası bir tehdit olarak algılanabilir ama uyarı olarak sunulmaktadır.</td>
+            </tr>
+            <tr>
+                <th>Kural 5</th>
+                <td>Herhangi bir işlem sırasında aynı gün içerisinde birden fazla donanımsal hata oluşması halinde kullanıcı uyarılmaktadır.</td>
+            </tr>
+            <tr>
+                <th>Kural 6</th>
+                <td>Önemi “Uyarı” veya “Hata” olan olaylarda ardışıklık olması ve aynı kaynaktan geliyor oluşu, belirsiz tehdit olarak sunulmaktadır.</td>
+            </tr>
+        </table>
+
+    </body>
+
+</div>

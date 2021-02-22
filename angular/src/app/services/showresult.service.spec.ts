@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MixedeventService } from './mixedevent.service';
+import { ShowresultService } from './showresult.service';
 
-describe('MixedeventService', () => {
-  let service: MixedeventService;
+describe('ShowresultService', () => {
+  let service: ShowresultService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MixedeventService);
+    service = TestBed.inject(ShowresultService);
   });
 
   it('should be created', () => {

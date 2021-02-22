@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { MatDialogRef} from '@angular/material/dialog';
-import { MatRadioChange } from '@angular/material/radio';
+import { Component, OnInit }  from '@angular/core';
+import { MatDialogRef }       from '@angular/material/dialog';
+import { ReadinputService }   from 'src/app/services/readinput.service';
+import { MatSnackBar }        from '@angular/material/snack-bar';
 
-
-// MatDialogActions
 export class Type{
   name:string;
   value:string;
 }
+
+// input data for path and type
+export class Input{
+  path:string;
+  type:string;
+}
+
 export const TYPE: Type[]=[
   {
     name:'Mixed',
@@ -25,17 +30,18 @@ export const TYPE: Type[]=[
   templateUrl: './read-path.component.html',
   styleUrls: ['./read-path.component.css']
 })
+
 export class ReadPathComponent implements OnInit {
 
   path:string;
-  files:string[];
-
   radioSel:any;
   type:string;
-  radioSelectedString:string;
   itemsList: Type[] = TYPE;
 
-  constructor(public dialogbox:MatDialogRef<ReadPathComponent>//, public service:EventService
+  constructor(public dialogbox:MatDialogRef<ReadPathComponent>
+    , public service:ReadinputService
+    , public snackBar:MatSnackBar
+
     ) { 
       this.itemsList = TYPE;
       this.type = "Mixed";
@@ -44,9 +50,8 @@ export class ReadPathComponent implements OnInit {
 
   getSelecteditem(){
     this.radioSel = TYPE.find(Item => Item.value === this.type);
-    this.radioSelectedString = JSON.stringify(this.radioSel);
-    //console.log("Radio button answer is: ", this.radioSelectedString, "\n\n");
   }
+  
   onItemChange(item){
     this.getSelecteditem();
   }
@@ -58,19 +63,31 @@ export class ReadPathComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClose(){
-    this.dialogbox.close();
-    //this.service.filter('Register click');
-  }
 
   onSubmit(event:any){
 
-    console.log("Path: ", event.target.path.value);
-    console.log("Button: ", this.radioSelectedString);
-    //console.log("Button: ", this.radioSel);
-    console.log("\n\n");
-    /**/
-      
+    //console.log("Path: ", event.target.path.value);
+    //console.log("Button: ", this.radioSel.value);
+    let inp: Input = new Input();
+
+    inp.path = event.target.path.value;
+    inp.type = this.radioSel.value;
+
+    this.service.addPath(inp).subscribe(res=>
+      {
+        this.snackBar.open(res.toString(),'',{
+          duration:5000,
+          verticalPosition:'top'
+        });
+        alert(res);
+      });
+
+    this.onClose();
+  }
+
+  
+  onClose(){
+    this.dialogbox.close();
   }
 
 }
